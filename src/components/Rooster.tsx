@@ -3001,12 +3001,10 @@ export function Rooster({ viewMode: viewModeProp = "week" }: { viewMode?: ViewMo
                         let offDayName = ""
                         if (rs && rs.status !== "no_cycle") {
                           // detect which day is the off day
-                          let effectiveCycle2 = rotateCycle(routeCycle, staffCycleOffset[resource.id] ?? "")
                           let patternStart2 = new Date(routePatternStart + "T00:00:00")
                           const firstKey = toDateKey(weekDays[0])
                           const ctx2 = detectCycleContext(resource.id, firstKey, shifts, routes, routeCycle)
                           if (ctx2) {
-                            effectiveCycle2 = ctx2.effectiveCycle
                             patternStart2 = new Date(ctx2.patternStart + "T00:00:00")
                           }
                           for (const d of weekDays) {

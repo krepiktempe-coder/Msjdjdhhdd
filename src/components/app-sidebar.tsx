@@ -169,7 +169,6 @@ export function AppSidebar({
   }
 
   const navItems: NavItemDef[] = React.useMemo(() => {
-    const allPages = ["route-list", "deliveries", "custom", "rooster", "plano-vm", "gallery-album"]
     const withActive = ALL_NAV_ITEMS.map(section => ({
       ...section,
       isActive: section.items.some(i => i.page === currentPage),
